@@ -16,9 +16,9 @@
 
 ## Технологии
 
-- **Frontend и Backend**: Next.js (React), Node.js, Express.js, MongoDB
+- **Frontend и Backend**: Next.js (React), Node.js, Nest.js, PostgreSql
 - **Аутентификация и авторизация**: JSON Web Tokens (JWT)
-- **Взаимодействие с базой данных**: Mongoose (MongoDB)
+- **Взаимодействие с базой данных**: Nest.js
 - **Коммуникация между клиентом и сервером**: RESTful API
 
 ## Установка и запуск
