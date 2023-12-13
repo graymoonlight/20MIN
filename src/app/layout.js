@@ -1,5 +1,6 @@
 import Header from '@/app/Components/Header';
 import Footer from '@/app/Components/Footer';
+import '@/app/Styles/mstyle.scss';
 
 export const metadata = {
   title: 'ProjectV',
