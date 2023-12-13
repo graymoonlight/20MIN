@@ -26,7 +26,7 @@
 1. Клонируйте репозиторий:
 
 ```
-git clone https://github.com/graymoonlight/ProjectV.git
+git clone https://github.com/graymoonlight/20MIN.git
 ```
 2. Установите зависимости:
 

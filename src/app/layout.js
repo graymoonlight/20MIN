@@ -3,7 +3,7 @@ import Footer from '@/app/Components/Footer';
 import '@/app/Styles/mstyle.scss';
 
 export const metadata = {
-  title: 'ProjectV',
+  title: '20&MIN',
   description: 'Web-app project',
 }
 
