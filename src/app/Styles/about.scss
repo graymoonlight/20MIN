@@ -1,0 +1,36 @@
+html{
+
+    height: 950px;
+  }
+  .about_us{
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      
+      padding: 40px;
+      background-color: #9e00e767;
+      width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+      height: 700px;
+    }
+    .about{
+      width: 1000px;
+      color: white;
+     margin-left: auto;
+     margin-right: auto;
+      text-align: center;
+    }
+    .about h1{
+  
+      font-size: 28px;
+      font-weight: 900;
+    }
+    .about p{
+     padding-top: 30px;
+    }
+    .about a{
+    
+      font-weight: 300;
+    
+    }

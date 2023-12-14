@@ -12,7 +12,6 @@ export default function Header() {
           <li><Link href="/about">О нас</Link></li>
           <li><Link href="/create">Создать проект</Link></li>
           <li><Link href="/join">Присоединиться</Link></li>
-          <li><Link href="/top">Топ проектов</Link></li>
         </ul>
       </nav>
       <form className="search-form" action="/search" method="get">
