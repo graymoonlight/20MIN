@@ -7,6 +7,7 @@ import ButtonUp from "@/app/Components/ButtonUp";
 import ModalAuth from "@/app/Components/ModalAuth";
 import ModalPassword from "@/app/Components/ModalPassword";
 import EditUsersModal from "@/app/Components/EditUsersModal";
+import { ToastContainer } from 'react-toastify';
 import '@/app/Styles/App.scss';
 import '@/app/Styles/index.scss';
 
@@ -55,6 +56,7 @@ export default function RootLayout({ children }) {
             <ModalPassword isOpen={isModalOpenPassword} onClose={closeModalPassword} />
             <EditUsersModal isOpen={isModalOpenUsers} onClose={closeModalUsers} />
             <Header openModal={openModalAuth} />
+            <ToastContainer position='top-right'/>
             {React.Children.map(children, (child) => {
               if (React.isValidElement(child)) {
                 return React.cloneElement(child, {
