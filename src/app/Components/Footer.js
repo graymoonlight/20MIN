@@ -1,25 +1,31 @@
+'use client'
 import Link from "next/link";
-import '@/app/Styles/footer.scss';
+import '@/app/Styles/Footer.scss';
 
 export default function Footer() {
     return (
-      <footer>
-        <div className="logo2">
-          <Link href="/"><img src="/иконка.png" alt="Логотип"/></Link>
+      <footer className="Footer">
+        <img className="Footer__logo" src='/Logo__footer.png' />
+        <div className="Footer__link">
+          <Link href="/about" className="Footer__link-a">
+            О нас
+          </Link> 
+          <Link  href="/newproject" className="Footer__link-a">
+            Создать проект
+          </Link> 
+          <Link  href="/join" className="Footer__link-a">
+            Присоединиться
+          </Link> 
+          <Link  href="/faq" className="Footer__link-a">
+            FAQ
+          </Link>  
         </div>
-        <nav className="nav_footer">
-          <ul>
-            <li><Link href="/about">О нас</Link></li>
-            <li><Link href="/create">Создать проект</Link></li>
-            <li><Link href="/join">Присоединиться</Link></li>
-            <li><Link href="/top">Топ проектов</Link></li>
-            <li><Link href="/faq">FAQ</Link></li>
-          </ul>
-        </nav>
-        <div className="contact">
-          <img src="/Instagram.png" />
-          <img src="/VK com.png" />
-          <img src="/Telegram App.png" />
+        <div className="Footer__contacts">
+          <h1>Контакты</h1>
+          <div className="Footer__contacts-img">
+          <Link  href="/"> <img src="Instagram.png" /> </Link>  
+          <Link  href="/">  <img src="/Telegram.png" /></Link>  
+          </div>
         </div>
       </footer>
     )

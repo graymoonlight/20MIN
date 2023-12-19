@@ -1,20 +1,67 @@
+'use client'
+import React, { useState } from "react";
 import Header from '@/app/Components/Header';
 import Footer from '@/app/Components/Footer';
-import '@/app/Styles/mstyle.scss';
-
-export const metadata = {
-  title: '20&MIN',
-  description: 'Web-app project',
-}
+import { Providers } from './Redux/providers';
+import ButtonUp from "@/app/Components/ButtonUp";
+import ModalAuth from "@/app/Components/ModalAuth";
+import ModalPassword from "@/app/Components/ModalPassword";
+import EditUsersModal from "@/app/Components/EditUsersModal";
+import '@/app/Styles/App.scss';
+import '@/app/Styles/index.scss';
 
 export default function RootLayout({ children }) {
+  const [isModalOpenAuth, setIsModalOpenAuth] = useState(false);
+  const [modalTypeAuth, setModalTypeAuth] = useState("registration");
+
+  const openModalAuth = (type) => {
+    setIsModalOpenAuth(true);
+    setModalTypeAuth(type);
+  };
+
+  const closeModalAuth = () => {
+    setIsModalOpenAuth(false);
+  };
+
+  const [isModalOpenPassword, setIsModalOpenPassword] = useState(false);
+
+  const openModalPassword = () => {
+    setIsModalOpenPassword(true);
+  };
+
+  const closeModalPassword = () => {
+    setIsModalOpenPassword(false);
+  };
+
+  const [isModalOpenUsers, setIsModalOpenUsers] = useState(false);
+
+  const openModalUsers = () => {
+    setIsModalOpenUsers(true);
+  };
+
+  const closeModalUsers = () => {
+    setIsModalOpenUsers(false);
+  };
+
   return (
     <html lang="en">
-      <body>
-        <Header />
-        {children}
-        <Footer />
+      <head>
+        <title>20&MIN</title>
+      </head>
+      <body className="App">
+        <div className="container">
+          <Providers>
+            <ModalAuth isOpen={isModalOpenAuth} onClose={closeModalAuth} type={modalTypeAuth} setModalType={setModalTypeAuth} />
+            <ModalPassword isOpen={isModalOpenPassword} onClose={closeModalPassword} />
+            <EditUsersModal isOpen={isModalOpenUsers} onClose={closeModalUsers} />
+            <Header openModal={openModalAuth} />
+            <div openModalPassword={openModalPassword} openModalUsers={openModalUsers}>{children}</div>
+            <Footer />
+            <ButtonUp />
+          </Providers>
+        </div>
       </body>
     </html>
-  )
+  );
 }
+
