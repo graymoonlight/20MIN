@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect } from "react";
 import "@/app/Styles/modal.scss";
 
@@ -45,7 +46,7 @@ const ModalAuth = ({ isOpen, onClose, type, setModalType }) => {
     };
   
     return (
-      <>
+      <div>
         {isOpen && (
           <div className="Container__modal" >
             <div className="Modal">
@@ -70,7 +71,7 @@ const ModalAuth = ({ isOpen, onClose, type, setModalType }) => {
             </div>
           </div>
         )}
-      </>
+      </div>
     );
   };
 

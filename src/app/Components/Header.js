@@ -2,16 +2,12 @@
 import Link from "next/link";
 import '@/app/Styles/header.scss';
 
-export default function Header() {
-  const openModal = (type) => {
-    console.log(`Open modal with type: ${type}`);
-  };
-
+export default function Header({ openModal }) {
   return (
     <header className="Header">
       <div className="Header__logo">
         <Link href="/">
-            <img src="Logo__header.png" alt="Logo" />
+          <img src="Logo__header.png" alt="Logo" />
         </Link>
       </div>
       
@@ -20,20 +16,13 @@ export default function Header() {
           <Link href="/about">О нас</Link>
           <Link href="/newproject">Создать проект</Link>
           <Link href="/join">Присоединиться</Link>
+          <Link href="/projects">Проекты</Link>
           <input type="button" onClick={() => openModal("login")} value="Войти" />
-        </div>
-
-        <div className="Header__nav-search">
-          <div className="Header__nav-search--bar">
-            <input type="text" placeholder="Поиск"/>
-            <img src="Lupa.png" alt="Search" />
-          </div>
-          <Link href="/profile">
-              <img src="usericon.png" alt="User" />
+          <Link href="/profile/:id">
+            <img src="usericon.png" alt="User" />
           </Link>
         </div>
       </div>
     </header>
   );
 }
-
