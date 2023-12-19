@@ -55,7 +55,15 @@ export default function RootLayout({ children }) {
             <ModalPassword isOpen={isModalOpenPassword} onClose={closeModalPassword} />
             <EditUsersModal isOpen={isModalOpenUsers} onClose={closeModalUsers} />
             <Header openModal={openModalAuth} />
-            <div openModalPassword={openModalPassword} openModalUsers={openModalUsers}>{children}</div>
+            {React.Children.map(children, (child) => {
+              if (React.isValidElement(child)) {
+                return React.cloneElement(child, {
+                  openModalPassword: openModalPassword,
+                  openModalUsers: openModalUsers,
+                });
+              }
+              return child;
+            })}
             <Footer />
             <ButtonUp />
           </Providers>
@@ -64,4 +72,5 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
 

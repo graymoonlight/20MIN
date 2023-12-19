@@ -1,19 +1,35 @@
 'use client'
-import '@/app/Styles/EditProjectCreator.scss'
+import React, { useState } from "react";
+import '@/app/Styles/EditProjectCreator.scss';
+import EditUsersModal from "@/app/Components/EditUsersModal";
 
-const data = [
-    {name:"Солнышкин",role:"Гений проекта"},
-    {name:"Солнышкин",role:"Гений проекта"},
-    {name:"Солнышкин",role:"Гений проекта"},
-    {name:"Солнышкин",role:"Гений проекта"},
-    {name:"Солнышкин",role:"Гений проекта"},
-    {name:"Солнышкин",role:"Гений проекта"},
-    {name:"Солнышкин",role:"Гений проекта"},
-    {name:"Солнышкин",role:"Гений проекта"},
-  ]
-const EditProjectCreator = ({openModalUsers}) => {
+
+const EditProjectCreator = () => {
+
+    const [isModalOpenUsers, setIsModalOpenUsers] = useState(false);
+
+    const openModalUsers = () => {
+      setIsModalOpenUsers(true);
+    };
+  
+    const closeModalUsers = () => {
+      setIsModalOpenUsers(false);
+    };
+
+    const data = [
+        {name:"Солнышкин",role:"Гений проекта"},
+        {name:"Солнышкин",role:"Гений проекта"},
+        {name:"Солнышкин",role:"Гений проекта"},
+        {name:"Солнышкин",role:"Гений проекта"},
+        {name:"Солнышкин",role:"Гений проекта"},
+        {name:"Солнышкин",role:"Гений проекта"},
+        {name:"Солнышкин",role:"Гений проекта"},
+        {name:"Солнышкин",role:"Гений проекта"},
+      ]
+
   return (
     <div className="EditProjectCreator">
+        <EditUsersModal isOpen={isModalOpenUsers} onClose={closeModalUsers} />
         <h1>Название проекта</h1>
         <div className="EditProjectCreator__Content">
             <div className="EditProjectCreator__Content__description" >
@@ -44,7 +60,7 @@ const EditProjectCreator = ({openModalUsers}) => {
                     ))}
 
                     <div className="EditProjectCreator__Content__users__participants__button">
-                        <input onClick={() => openModalUsers()} type="button" value={"Добавить"} />
+                        <input onClick={openModalUsers} type="button" value="Добавить" />
                     </div>
            
                 </div>
